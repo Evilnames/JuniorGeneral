@@ -1,0 +1,38 @@
+Collabrative nations
+
+'World' is the collection of assets.
+'Assets' can be anything that describes the world.
+Assets can be assigned to other assets.
+
+Assets are types of 'things'.
+
+A Type is given a specific attribute pool that they all have and that are overriden at the asset level.
+
+World -> Type -> Asset -> Attribute
+
+I.E. 
+
+Type : Flag
+	Attributes
+		->Color
+		->Size
+		->Shape
+		->Description
+		->Owner
+
+An asset can always be 'owned' by another asset.
+
+All attributes can be set with in game date ranges.
+
+
+All assets can have notes and filler about them which can be added too specific eras etc.
+
+You can set 'Eras' with specific dates to say 'In the X Era'
+
+Events are collections of 'assets' being assigned too a specific action in the history.
+
+For example : 
+'We attacked the town of Asett'.
+
+Event #1234
+Assets Assigned : Asett, General Boregard, Alpha Man

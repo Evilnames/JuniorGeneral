@@ -1,0 +1,374 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Engin",
+				"EngineLocation"
+			],
+			[
+				"Parse",
+				"ParseToKeys"
+			],
+			[
+				"Looku",
+				"lookupkey"
+			],
+			[
+				"ge",
+				"labelGenerate"
+			],
+			[
+				"lab",
+				"labelGenerate"
+			],
+			[
+				"ren",
+				"renderSelectOptions"
+			],
+			[
+				"render",
+				"renderselectoptions"
+			],
+			[
+				"select",
+				"selectList"
+			],
+			[
+				"input",
+				"inputControl"
+			],
+			[
+				"id",
+				"IDPool"
+			],
+			[
+				"c",
+				"control"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"sell",
+				"sellcost"
+			],
+			[
+				"task_ca",
+				"task_categorytitle"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"a",
+				"array	$… = array (…)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 242.0,
+		"selected_items":
+		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syn",
+				"Set Syntax: C#"
+			],
+			[
+				"snipp",
+				"Snippet: for (…) {…}"
+			],
+			[
+				"",
+				"Sort Lines"
+			],
+			[
+				"SET SYNTAX JAVASC",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/xampp/htdocs/Juniorgeneral/Nations",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/add/article.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/controllers/user.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/article/view.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/models/articlemodel.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/controllers/article.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/add/figure.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/article/maintain.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/json.php",
+		"/D/xampp/htdocs/Esoth/AdventurersOfTheWild.php",
+		"/C/Users/Evilnames/Desktop/AssMon",
+		"/D/xampp/htdocs/Esoth/Esoth.php",
+		"/D/xampp/htdocs/Esoth/EsothProcessor.php",
+		"/D/xampp/htdocs/Awful/index.html",
+		"/D/xampp/htdocs/Awful/examples/jquery.html",
+		"/D/xampp/htdocs/Awful/LICENSE.md",
+		"/D/xampp/htdocs/Awful/examples/index.html",
+		"/D/xampp/htdocs/jqeval/invoiceview.html",
+		"/D/xampp/htdocs/backboneTest/index.php",
+		"/D/xampp/htdocs/jasminetest/index.html",
+		"/D/xampp/htdocs/jasminetest/control_Test.js",
+		"/D/xampp/htdocs/jasminetest/controls.js",
+		"/C/Users/Evilnames/Desktop/tSQLt.class.sql",
+		"/D/xampp/htdocs/jasminetest/control_test.html",
+		"/D/xampp/htdocs/jsdoc/conf.json.EXAMPLE",
+		"/D/xampp/htdocs/jasminetest/jasmine/jasmine.jquery.js",
+		"/D/xampp/htdocs/IsItFerret/index.html",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/enhancement/progressive.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/options/options.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/feed/project.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/client/clients.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/dashboard/dashboard.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/version/versioning.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/enhancement/board.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/tasks/tasks.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/brainstorm/feedbackloop.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/brainstorm/brainstorm",
+		"/D/xampp/htdocs/ApBan/Dev/DevDoc",
+		"/D/xampp/htdocs/ApBan/application/models/apban/projects/projectModel.php",
+		"/D/xampp/htdocs/ApBan/application/models/apban/case/casemodel.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/case/case.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/users/setup.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/projects/view.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/users/expierences.php",
+		"/D/xampp/htdocs/ApBan/application/controllers/apban/users/stories.php",
+		"/D/xampp/htdocs/ApBan/application/models/apban/projects/projectModel",
+		"/D/xampp/htdocs/ApBan/application/models/apban/projects/projects.php",
+		"/D/xampp/htdocs/ApBan/application/config/database.php",
+		"/D/xampp/htdocs/ApBan/application/config/routes.php",
+		"/D/xampp/htdocs/ApBan/application/views/apban/projects/view.php",
+		"/D/xampp/htdocs/ApBan/application/config/config.php",
+		"/D/xampp/htdocs/iclock/application/config/database.php",
+		"/D/xampp/htdocs/backboneTest/js/underscore.js",
+		"/D/xampp/htdocs/backboneTest/js/backbone.js",
+		"/D/xampp/htdocs/tEmber/example.js",
+		"/D/xampp/htdocs/tEmber/index.php",
+		"/D/xampp/htdocs/tEmber/js/knockout.js",
+		"/D/xampp/htdocs/tEmber/js/handlebars.js",
+		"/D/xampp/htdocs/tEmber/js/jquery.min.js",
+		"/D/xampp/htdocs/tEmber/home.php",
+		"/D/xampp/htdocs/tEmber/js/ember.js",
+		"/D/xampp/htdocs/eTest/app.js",
+		"/D/xampp/htdocs/eTest/index.php",
+		"/D/xampp/htdocs/Juniorgeneral/application/controllers/figure.php",
+		"/C/Users/Evilnames/Desktop/PackagesUI.txt",
+		"/C/Users/Evilnames/Desktop/packages.txt",
+		"/C/Users/Evilnames/Desktop/HRIS Features",
+		"/C/Users/Evilnames/Desktop/speech",
+		"/D/xampp/htdocs/Skills/index.php",
+		"/D/xampp/htdocs/Skills/skills.js",
+		"/C/Users/Evilnames/Desktop/casemanagement.js",
+		"/D/xampp/htdocs/Lord_Partly/js/ship.js",
+		"/D/xampp/htdocs/legends/lib/jsLogic/draw.js",
+		"/D/xampp/htdocs/pigs/index.php",
+		"/D/xampp/htdocs/pigs/gameitem/event.json",
+		"/D/xampp/htdocs/pigs/js/pigs.js",
+		"/D/xampp/htdocs/pigs/js/bootstrap.css",
+		"/D/xampp/htdocs/pigs/js/jquery.js",
+		"/D/xampp/htdocs/pigs/js/angular.js",
+		"/C/Users/Evilnames/Desktop/steam",
+		"/C/Users/Evilnames/Desktop/conTakeaways",
+		"/D/xampp/htdocs/Juniorgeneral/application/views/figure/showMoreFigures.php",
+		"/D/xampp/htdocs/nBoot/docs/index.html",
+		"/D/xampp/htdocs/nBoot/docs/_layouts/example.html",
+		"/D/xampp/htdocs/nBoot/docs/examples/signin.html",
+		"/D/xampp/htdocs/austintest/index.php",
+		"/D/xampp/htdocs/whitebox/application/controllers/main.php",
+		"/D/xampp/htdocs/whitebox/application/views/template/header.php",
+		"/D/xampp/htdocs/whitebox/application/models/taskModel.php",
+		"/D/xampp/htdocs/whitebox/application/views/task/viewAllMine.php",
+		"/D/xampp/htdocs/whitebox/application/controllers/task.php",
+		"/D/xampp/htdocs/whitebox/application/libraries/attribute.php",
+		"/D/xampp/htdocs/whitebox/application/models/accountModel.php",
+		"/D/xampp/htdocs/whitebox/application/models/attributeModel.php",
+		"/D/xampp/htdocs/whitebox/application/views/accounts/all.php",
+		"/D/xampp/htdocs/whitebox/application/controllers/task/task",
+		"/D/xampp/htdocs/whitebox/application/controllers/options/manage.php",
+		"/D/xampp/htdocs/whitebox/application/views/options/CommonAttributes.php",
+		"/D/xampp/htdocs/uxattack/application/models/uxcomparemodel.php",
+		"/D/xampp/htdocs/whitebox/application/config/routes.php",
+		"/D/xampp/htdocs/uxattack/application/controllers/uxcompare.php",
+		"/D/xampp/htdocs/whitebox/application/models/projectModel.php",
+		"/D/xampp/htdocs/whitebox/application/models/userModel.php",
+		"/D/xampp/htdocs/whitebox/application/config/database.php",
+		"/D/xampp/htdocs/uxattack/application/config/database.php",
+		"/D/xampp/htdocs/uxattack/application/config/config.php",
+		"/D/xampp/htdocs/whitebox/assets/3rdParty/jquery/js/jquery.js",
+		"/C/Users/Evilnames/Documents/system.txt",
+		"/D/Python27/test.py",
+		"/C/Users/Evilnames/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Evilnames/AppData/Roaming/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/C/Users/Evilnames/AppData/Roaming/Sublime Text 2/Packages/User/Python.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"loaddashboard",
+			"view",
+			"check",
+			"redirect",
+			"loadDashboard",
+			"//------------------------------------------",
+			"session",
+			"5",
+			"welcome",
+			">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"artilemo",
+				"application/models/articlemodel.php"
+			],
+			[
+				"user",
+				"application/controllers/user.php"
+			],
+			[
+				"addarti",
+				"application/views/add/article.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true
+}
