@@ -86,7 +86,12 @@
         </div>
 
 
-
+        <br>
+        <br>
+        <br>
+        <div class="span12" style="text-align:center">
+            <a href="index.php/landing/privacy/">Privacy Policy</a>
+        </div>
     </div>
     <Script type="text/javascript">
         $('document').ready(function(){

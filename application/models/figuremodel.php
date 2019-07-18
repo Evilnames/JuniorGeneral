@@ -11,9 +11,9 @@ class figuremodel extends CI_Model {
     //@@Returns a figure based on its URL Name
     public function getFigure($url) {
 
-        //$SubCatagoryName = "SELECT Title FROM titles WHERE PeriodID = $TimePeriodO and Subcatagory = $SubCatO LIMIT 1";
         //Build the query
-        $query = $this->db->query('select * from figures inner join titles on PeriodID = TimePeriod AND subcatagory = SubPeriod where url=\'' . $url . '\'');
+        $SQL = "select * from figures inner join titles on PeriodID = TimePeriod AND subcatagory = SubPeriod where url=?";
+        $query = $this->db->query($SQL, array($url));
 
         //Return the Query
         return $query->result_array();
@@ -22,8 +22,6 @@ class figuremodel extends CI_Model {
     //@@Returns all unapproved items
     public function getUnapproved() {
 
-        //$SubCatagoryName = "SELECT Title FROM titles WHERE PeriodID = $TimePeriodO and Subcatagory = $SubCatO LIMIT 1";
-        //Build the query
         $query = $this->db->query('select * from figures inner join titles on PeriodID = TimePeriod AND subcatagory = SubPeriod where approved = 0 and void = 0');
 
         //Return the Query
@@ -49,8 +47,8 @@ class figuremodel extends CI_Model {
         endforeach;
 
         $string = substr($string, 0, strlen($string) - 2);
-        //String title cannot be blank.
-        $query = $this->db->query('select * from figures inner join titles on PeriodID = TimePeriod AND subcatagory = SubPeriod where UID in (' . $string . ') and Title != ?', array(''));
+
+        $query = $this->db->query('select * from figures inner join titles on PeriodID = TimePeriod AND subcatagory = SubPeriod where UID in (' . $string . ')');
         return $query->result_array();
     }
 
@@ -118,7 +116,8 @@ class figuremodel extends CI_Model {
 
         $where = array('TimePeriod' => $periodID,
             'approved' => 1,
-            'void' => 0
+            'void' => 0,
+            'Title !=' => ''
         );
 
         //Build the query
@@ -128,6 +127,17 @@ class figuremodel extends CI_Model {
 
         //Return Query Information
         $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function getAllFromDesigner($Designer)
+    {
+        $Designer = strtolower($Designer);
+        $Designer = str_replace("%20", " ", $Designer);
+        $SQL = "select * from figures f inner join mastercat m on m.PeriodID = f.TimePeriod inner join titles t on t.Subcatagory = f.SubPeriod  where lower(ltrim(rtrim(designer))) = ? and approved = 1 and void = 0 and Title != '' order by f.TimePeriod, f.SubPeriod, f.Title";
+
+        //Return Query Information
+        $query = $this->db->query($SQL, array($Designer));
         return $query->result_array();
     }
 
@@ -162,7 +172,8 @@ class figuremodel extends CI_Model {
         $this->db->where(array(
             'void' => 0,
             'approved' => 1,
-            'TimePeriod !=' => 999
+            'TimePeriod !=' => 999,
+            'Title !=' => ''
         ));
 
         //Return Query Information

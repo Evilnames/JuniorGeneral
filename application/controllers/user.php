@@ -405,6 +405,11 @@ class user extends CI_Controller {
     //--------------------------------------------------------------------------
     //Password Changing
     public function changepassword() {
+        //MUST BE LOGGED IN
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
+
+
         //Load the view
         $this->load->view('header/head');
         $this->load->view('add/password');
@@ -413,6 +418,10 @@ class user extends CI_Controller {
 
     //Saves a password
     public function savepassword() {
+        //MUST BE LOGGED IN
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
+
         $this->load->model('usermodel');
         $password = $this->input->post('password');
         $passwordEncrypt = $this->encrypt->sha1($password);
@@ -423,6 +432,10 @@ class user extends CI_Controller {
     }
 
     public function articlelist(){
+        //MUST BE LOGGED IN
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
+
         $this->load->model('articlemodel');
         $data['articles'] = $this->articlemodel->getAllArticles();
         
@@ -430,6 +443,46 @@ class user extends CI_Controller {
         $this->load->view('article/maintain', $data);
         $this->load->view('header/foot');
     }
+    
+    public function links(){
+        //MUST BE LOGGED IN
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
+
+
+        $this->load->view('header/head');
+        $this->load->view('add/link');
+        $this->load->view('header/foot');
+    }
+
+    public function linkAdd(){
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
+
+        $title = $this->input->post('title');
+        $description = $this->input->post('description');
+        $category = $this->input->post('Category');
+        $website = $this->input->post('Website');
+
+        $data = array(
+            'website'       => $website,
+            'title'         => $title,
+            'category'      => $category,
+            'Description'   => $description
+        );
+
+        $this->load->model('linkmodel');
+        $this->linkmodel->saveLink($data);
+
+        redirect('http://juniorgeneral.org/index.php/user/links');
+
+    }
+
+
+    public function createAlex(){
+
+    }
+    
     
     //--------------------------------------------------------------------------
     //Loads a dashboard

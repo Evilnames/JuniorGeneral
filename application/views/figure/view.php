@@ -1,5 +1,8 @@
-<div style="margin-top:50px;">
+<div style="margin-top:25px;">
+
     <center>
+    <h1><?php echo $iFig['Title']; ?></h1>
+    <h4>By : <a href="../designer/<?php echo $iFig['Designer']; ?>"><?php echo $iFig['Designer']; ?></a></h4><br/>
         <img class="fig-image" src="<?php echo base_url() . $iFig['FileLocation']; ?>" alt="<?php echo $iFig['Title']; ?>">
     </center>
 </div>
@@ -15,7 +18,7 @@
 
             <div class="span2">
                 <i>Designer</i>
-                <p><?php echo $iFig['Designer']; ?></p>
+                <p><a href="../designer/<?php echo $iFig['Designer']; ?>"><?php echo $iFig['Designer']; ?></a></p>
             </div> 
 
             <div class="span3">
@@ -49,5 +52,8 @@
         endif;
         ?>
     </div>
-
+    <div class="span12" style="text-align:center">
+        <a rel="license" target="blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons License</a>.
+    </div>
 </div>
+

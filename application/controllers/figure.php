@@ -24,6 +24,40 @@ class figure extends CI_Controller {
         $this->load->view('figure/view', $data);
         $this->load->view('header/foot');
     }
+    //index.php/figure/designer/{}
+    public function designer($designer){
+        $this->load->model('figuremodel');
+        $figures = $this->figuremodel->getAllFromDesigner($designer);
+        if(sizeof($figures) == 0){
+            die('No Figures found');
+        }
+        $records = array();
+
+        foreach($figures as $i => $figure){
+            if(!array_key_exists($figure['masterTitle'], $records)){
+                $records[$figure['masterTitle']] = array();
+                $records[$figure['masterTitle']]['masterURL'] = $figure['masterURL'];
+                $records[$figure['masterTitle']]['SubCategory'] = array();
+            }
+
+            if(!array_key_exists($figure['categoryTitle'], $records[$figure['masterTitle']]['SubCategory'])){
+                $records[$figure['masterTitle']]['SubCategory'][$figure['categoryTitle']] = array();
+            }
+
+            array_push($records[$figure['masterTitle']]['SubCategory'][$figure['categoryTitle']], $figure);
+
+        }
+
+
+        $data['records'] = $records;
+        
+        $data['designer'] = $designer;
+
+        //Load the view
+        $this->load->view('header/head');
+        $this->load->view('figure/designer', $data);
+        $this->load->view('header/foot');
+    }
 
     public function figureList($URL) {
         //Load the Model
@@ -31,6 +65,10 @@ class figure extends CI_Controller {
 
         //Lookup Data
         $set = $this->figuremodel->getMasterCat($URL);
+        if(sizeof($set) == 0):
+            die('Error!');
+        endif;
+
         $periodID = $set[0]['PeriodID'];
 
         //Get all subcategories linked to this category
@@ -56,6 +94,7 @@ class figure extends CI_Controller {
                 array_push($itemList[$zVal['SubPeriod']]['figureList'], $zVal);
             endif;
         endforeach;
+
 
         //Roll the data package.
         $data['items'] = $itemList;
@@ -138,6 +177,8 @@ class figure extends CI_Controller {
 
     //Looks for duplicates.
     public function fixDuplicateURL() {
+        $this->load->model('figuremodel');
+
         $this->load->model('figuremodel');
 
         $set = $this->figuremodel->allFigures();

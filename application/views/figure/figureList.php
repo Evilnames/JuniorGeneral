@@ -29,6 +29,7 @@
                 <tr><th>Title</th>
                     <th>Description</th>
                     <th>Designer</th>
+                    <th>Date Uploaded</th>
                 </tr>
                 <?php
                 foreach ($value['figureList'] as $x => $xVal):
@@ -42,7 +43,10 @@
                     
                         <td><a href="../view/<?php echo $xVal['url']; ?>"><?php echo $xVal['Title']; ?></a></td>
                         <td><?php echo $xVal['Description']; ?> &nbsp;</td>
-                        <td><?php echo $xVal['Designer']; ?></td>                            
+                        <td><a href="../designer/<?php echo $xVal['Designer']; ?>"><?php echo $xVal['Designer']; ?></a></td>  
+                        <td><?php 
+                            echo ($xVal['DateUploaded'] != "0000-00-00 00:00:00") ? date("m/d/Y", strtotime($xVal['DateUploaded'])) : 'Before Time' ; 
+                        ?></td>                          
                     </tr>
                     <?php
                 endforeach;

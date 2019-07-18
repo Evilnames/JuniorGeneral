@@ -27,8 +27,14 @@ class landing extends CI_Controller{
         $this->load->view('home/landing', $data);
         $this->load->view('header/foot');
     }
- 
     
+    public function privacy(){
+        $this->load->view('header/head');
+        $this->load->view('home/privacy');
+        $this->load->view('header/foot');
+    }
+
+
 }
 
 ?>

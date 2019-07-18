@@ -34,10 +34,10 @@ class articlemodel extends CI_Model {
     public function getAllArticles(){
         $this->db->join('articlecategory', 'artcatid=category');
         $this->db->from('articles');
-
-        //Article title must have some kind of data in it.  Otherwise we're just assuming it should be closed/deleted
-        $this->db->where('articletitle !=', '');
-        $this->db->order_by('datecreated desc');
+        $this->db->where(array(
+            'articletitle !=' => ''
+        ));
+        $this->db->order_by('articletitle desc');
 
         $query = $this->db->get();
         return $query->result_array();

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML lang="en">
 <head>
     <title>Junior General Home Page</title>
     <meta name="description" content="Promoting the use of historical simulations as a tool for teaching history.  Free resources anyone can use.">
@@ -21,7 +21,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
 
         <div class="navbar-inner">
-            <a class="brand" href="http://www.juniorgeneral.org">JuniorGeneral.org</a>
+            <a class="brand" href="https://juniorgeneral.org">JuniorGeneral.org</a>
             <div class="container">
 
                 <ul class="nav">
@@ -52,13 +52,10 @@
                         <a href="<?php echo base_url(); ?>index.php/article/"><i class="jg_nine"></i>Articles</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url(); ?>index.php/nations/"><i class="jg_thirtysix"></i>Nations</a>
+                        <a href="<?php echo base_url(); ?>index.php/links/"><i class="jg_eight"></i>Links</a>
                     </li>
                     <li>
-                        <a href="http://www.facebook.com/pages/Junior-General/122810484457982/"><i class="jg_thirtyfour"></i>Facebook</a>
-                    </li>
-                    <li>
-                        <a href="http://www.juniorgeneral.org/smf/index.php"><i class="jg_thirtytwo"></i>Forum</a>
+                        <a href="https://www.facebook.com/pages/Junior-General/122810484457982/"><i class="jg_thirtyfour"></i>Facebook</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url(); ?>index.php/user/"><i class="jg_thirtynine"></i>
