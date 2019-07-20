@@ -1,8 +1,8 @@
 <div class="container">
 
     <div class="span12 masthead jgPop">
-        <h1>Scenarios</h1>
-        <h3>Wargames for Everyone</h3>
+        <h1>Educational Resources</h1>
+        <h3>Games for Everyone</h3>
     </div>
 
     <div class="span12">
