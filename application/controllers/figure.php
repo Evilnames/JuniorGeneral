@@ -63,6 +63,11 @@ class figure extends CI_Controller {
         //Load the Model
         $this->load->model('figuremodel');
 
+        if(strtolower($URL) == 'nonhistorical'){
+            redirect("https://juniorgeneral.org/index.php/figure/figureList/scifi");
+            die();
+        }
+
         //Lookup Data
         $set = $this->figuremodel->getMasterCat($URL);
         if(sizeof($set) == 0):

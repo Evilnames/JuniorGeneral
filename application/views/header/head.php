@@ -42,7 +42,8 @@
                             <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/coldwar">Cold War</a></li>
                             <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/modern">Modern</a></li>
                             <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/topdowns">Top-downs</a></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/nonhistorical">Non-Historical</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/scifi">Science Fiction</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/figure/figureList/fantasy">Fantasy</a></li>
                         </ul>
                     </li>
                     <li>

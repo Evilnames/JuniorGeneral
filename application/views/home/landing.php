@@ -8,7 +8,7 @@
     <!-- About Us Sections-->
     <div class="span12 pushMe">
         <Div class="span12 mainpusher">
-            <h1>What Makes Juniorgeneral Great?</h1>
+            <h2>What Makes Juniorgeneral Great?</h2>
         </div>
         <div class="row-fluid">
             <div class="span4 aboutsec">
@@ -21,13 +21,13 @@
             <div class="span4 aboutsec">
                 <img class="jgPop" id="pset2" alt="">
                 <p class="nonbooth2">Common Scale</p>
-                <p>Juniorgeneral's paper figures are designed using community defined scales and standards.  Our common scales mean that when you look at a figure you know there will always be an opponent to match!</p>
+                <p>Juniorgeneral's paper miniatures are designed using community defined scales and standards.  Our common scales mean that when you look at a figure you know there will always be an opponent to match!</p>
             </div>
 
             <div class="span4 aboutsec">
                 <img class="jgPop" id="pset3" alt="">
                 <p class="nonbooth2">Easy Wargames for Everyone</p>
-                <p>Our wargames are built with students in mind.  They are easy, quick to play, and even easier to learn.  Plus our paper figures are built to complement them!</p>
+                <p>Our wargames are built with students in mind.  They are easy, quick to play, and even easier to learn.  Plus our paper miniatures are built to complement them!</p>
             </div>
 
         </div>
@@ -35,7 +35,12 @@
     <div class="span12">
         <Div class="span12 mainpusher">
             <hr/>
-            <h1>What's New?</h1>
+            <h2>What's New?</h2>
+        </div>
+        <div class="span12" style="text-align:center">
+             <ul style="list-style:none">
+                <li>Submit files <a href="https://form.jotform.com/91980734038160" target="_blank">Here</a>
+            </ul>
         </div>
         <div class="row-fluid">
             <div class="span4 aboutsec">
@@ -52,6 +57,9 @@
                     ?>
                     <li>
                         <a href="/index.php/figure/showMoreFigures/"><b>Show More Uploaded Files!</b></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://form.jotform.com/91980734038160"><b>Submit a new file!</b></a>
                     </li>
                 </ul>
             </div>

@@ -19,11 +19,17 @@ class search extends CI_Controller {
 
         //Get the distinct keys
         $searchKeys = explode(" ", $search);
+        $foundItems = 0;
 
         //Get all the search key items
         foreach ($searchKeys as $i => $value):
+            
             $dSet[$i] = $this->searchmodel->getKeySearch($value);
+            $foundItems += sizeof($dSet[$i]);
         endforeach;
+
+        //Log this and how many results it found to see what people are searching for.
+        $this->searchmodel->logSearch($search, $foundItems);
 
         //Merge the dSets into one thing with one set of UID's as the key
         $data = array();
