@@ -24,8 +24,7 @@ class scenariomodel extends CI_Model{
     }
     
     //@@Returns the newest scenarios in the system
-        public function lastcreated($amt) {
-
+   public function lastcreated($amt) {
         $this->db->order_by('createdate', 'desc');
         
         //Return Query Information

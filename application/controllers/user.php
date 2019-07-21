@@ -394,7 +394,8 @@ class user extends CI_Controller {
             'ScenarioURL' => $this->input->post('url'),
             'ScenarioDescription' => $this->input->post('description'),
             'CategoryID' => $this->input->post('category'),
-            'year' => $this->input->post('year')
+            'year' => $this->input->post('year'),
+            'Type' => $this->input->post('type')
         );
 
         $this->scenariomodel->newScenario($data);

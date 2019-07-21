@@ -18,6 +18,9 @@
             <label>Year (Negative for BC)</label>
             <input type="text" name="year" id="year" class="span8">
             
+            <label>Type (Such as Miniature/Map/Matrix/Card)</label>
+            <input type="text" name="type" id="type" class="span8">
+            
             
             <label>Category</label>
             <select name="category" id="category">

@@ -29,6 +29,7 @@
             <table class="table table-bordered table-striped table-condensed">
                 <tr><th>Title</th>
                     <th>Description</th>
+                    <th>Type</th>
                 </tr>
                 <?php
                     foreach($value['keys'] as $ii=>$val):
@@ -36,7 +37,7 @@
                 <tr>
                     <td><A href="<?php echo $scenario[$val]['ScenarioURL'];  ?>" target="_blank"><?php echo $scenario[$val]['ScenarioName'];  ?></td>
                     <td><?php echo $scenario[$val]['ScenarioDescription'];  ?></td>
-                    
+                    <td><?php echo $scenario[$val]['Type'];  ?></td>
                 </tr>
                         <?php
                     endforeach;
