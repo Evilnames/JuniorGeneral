@@ -24,15 +24,20 @@ class figure extends CI_Controller {
         $this->load->view('figure/view', $data);
         $this->load->view('header/foot');
     }
+
+
     //index.php/figure/designer/{}
     public function designer($designer){
         $this->load->model('figuremodel');
         $figures = $this->figuremodel->getAllFromDesigner($designer);
-        if(sizeof($figures) == 0){
+
+        if(count($figures,COUNT_RECURSIVE) == 0){
             die('No Figures found');
         }
-        $records = array();
 
+        $records = array();
+        $figureCount = 0;
+        
         foreach($figures as $i => $figure){
             if(!array_key_exists($figure['masterTitle'], $records)){
                 $records[$figure['masterTitle']] = array();
@@ -45,13 +50,13 @@ class figure extends CI_Controller {
             }
 
             array_push($records[$figure['masterTitle']]['SubCategory'][$figure['categoryTitle']], $figure);
-
+            $figureCount++;
         }
 
 
         $data['records'] = $records;
-        
         $data['designer'] = $designer;
+        $data['totalFigures'] = $figureCount;
 
         //Load the view
         $this->load->view('header/head');

@@ -5,11 +5,25 @@
     </div>
   <br/><br/><br/>
 
+    <div class="span12">
+        <h3>Designer Stats</h3>
+        <table class="table table-bordered table-striped table-condensed" style="margin-top:20px;">
+            <tr>
+                <th>Statistic</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>Number of Figures Contributed</td>
+                <td><?php echo number_format($totalFigures, 0);?></td>
+            </tr>
+        </table>
+    </div>
+
 <?php 
     foreach($records as $i => $record){
         foreach($record['SubCategory'] as $s => $subCat){
             ?>
-                <div>
+                <div class="span12">
                     <h3><a href="../figureList/<?php echo $record['masterURL'];?>"><?php echo $i;?></a> > <?php echo $s;?></h3>
                     <table class="table table-bordered table-striped table-condensed" style="margin-top:20px;">
 
