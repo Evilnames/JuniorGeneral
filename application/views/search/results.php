@@ -18,7 +18,7 @@
         <tr>
             <td><a href="<?php echo base_url(); ?>index.php/figure/view/<?php echo $value['info']['url'];?>"><?php echo $value['info']['Title'];?></a></td>
             <td><?php echo $value['info']['Description'];?></td>
-            <td><?php echo $value['info']['Designer'];?></td>
+            <td><a href="<?php echo base_url(); ?>index.php/figure/designer/<?php echo $value['info']['Designer']; ?>"><?php echo $value['info']['Designer'];?></a></td>
             <td><?php echo $value['info']['categoryTitle'];?></td>
             <td><?php echo $value['value'];?></td>
             

@@ -26,7 +26,8 @@
             <hr/>
 
             <table class="table table-bordered table-striped table-condensed">
-                <tr><th>Title</th>
+                <tr>
+                    <th>Title</th>
                     <th>Description</th>
                     <th>Designer</th>
                     <th>Date Uploaded</th>
