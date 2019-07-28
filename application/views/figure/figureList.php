@@ -3,13 +3,13 @@
 <div class="container">
     <div class="span12 masthead jgPop">
         <h1><?php echo $masterData[0]['masterTitle']; ?> </h1>
-        <h3>Paper Soldiers</h3>
+        <h3>Paper Miniatures</h3>
     </div>
     <div class="span12">
 
         <hr/>
         <h2>Subcategories</h2>
-        <ul class="nav nav-list">
+        <ul style="list-style:none">
             <?php
             foreach ($items as $z => $zVal):
                 echo '<li><a href="#' . $z . '">' . $zVal[0]['categoryTitle'] . '</a></li>';
