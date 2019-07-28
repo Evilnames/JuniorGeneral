@@ -40,7 +40,7 @@
 
         <?php
         //admin panel
-        if (DEFINED('JGLOGGEDIN') && DEFINED('ADMIN')):
+        if (DEFINED('JGLOGGEDIN')):
             ?>
             <div class="span12 pushMe">
                 <hr/>

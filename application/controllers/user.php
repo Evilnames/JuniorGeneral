@@ -146,10 +146,6 @@ class user extends CI_Controller {
         endif;
 
         $userPermission = $this->session->userdata('UserLevel');
-        if ($userPermission <= 2):
-            //Unallowed to access this.
-            $this->fileuploaderror(array());
-        endif;
 
         //Continuing data gathering.
         $this->load->model('figuremodel');
@@ -206,7 +202,6 @@ class user extends CI_Controller {
         //pTitle    url    pDesigner   Description    category
         //Get this set
         $userPermission = $this->session->userdata('UserLevel');
-        $userName = $this->session->userdata('Username');
 
         $title = $this->input->post('pTitle');
         $url = $this->input->post('url');
@@ -224,35 +219,63 @@ class user extends CI_Controller {
             'Description' => $description,
             'SubPeriod' => $Subcategory,
             'TimePeriod' => $periodID,
-            'uploader' => $userName
+            'uploader' => $username
         );
 
+        //AK - We want anyone with a user prermission less than this to go through an approval process, even if they're
+        //editting a file that was already done.  This prevents people from trying to just destroy files all over the place
+        if($userPermission <= 2){
+            $data['approved'] = '0';
+            $data['approver'] = NULL;
+        }
 
+        //If this is not an edit then we want to update the url.  almost everything goes off url to avoid using guids
         if (!$edit):
-            //Add the url
             $data['url'] = $url;
         endif;
 
+        //If this is an edit but we haven't changed the files then ignore this
         if ($edit && !$filenamelookup):
 
         else:
+            //Mutates the date added because we want updated figures to show up on the home page.
             $data['FileLocation'] = $filename;
+            $data['DateUploaded'] = new Date('Y-m-d h:i:sa');
         endif;
 
+        //Auto approve if this is a super user
         if ($userPermission == 3):
             $data['approved'] = 1;
             $data['approver'] = $userName;
         endif;
 
         //Add to the system
-
         if (!$edit):
             //Add It
             $this->figuremodel->addFigure($data);
+
+            //Log this change to the DB
+            $this->figuremodel->log_figure_change($username, NULL, json_encode($data));
         else:
+            
+            //Log this change
+            $edit_json = json_encode($data);
+            
+            //Get the current figure and encode it to json for logging
+            $current_figure = json_encode($this->figuremodel->getFigure($edit));
+
             //Update it
             $this->figuremodel->updateFigure($edit, $data);
+
+            //Log this change to the DB
+            $this->figuremodel->log_figure_change($username, $current_figure, $edit_json);
+
         endif;
+
+        //Send an email to Alex and Matt that there is a new file to approve
+        if($userPermission <= 2){
+            mail("askremer@gmail.com","New file ready for approval","New file ready for approval");
+        }
 
         //Redirect to this unit.
         $to = (!$edit) ? $data['url'] : $edit;
@@ -479,11 +502,13 @@ class user extends CI_Controller {
 
     }
 
+    //@@URL : /index.php/user/test_email_system/
+    public function test_email_system(){
+        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        endif;
 
-    public function createAlex(){
-
+        mail("askremer@gmail.com","Test Message","Outbound message from juniorgeneral.org");
     }
-    
     
     //--------------------------------------------------------------------------
     //Loads a dashboard

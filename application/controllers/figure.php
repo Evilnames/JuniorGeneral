@@ -184,8 +184,6 @@ class figure extends CI_Controller {
     public function fixDuplicateURL() {
         $this->load->model('figuremodel');
 
-        $this->load->model('figuremodel');
-
         $set = $this->figuremodel->allFigures();
         foreach ($set as $i => $value):
             $url = $value['url'];

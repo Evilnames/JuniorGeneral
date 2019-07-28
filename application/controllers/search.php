@@ -20,12 +20,17 @@ class search extends CI_Controller {
         //Get the distinct keys
         $searchKeys = explode(" ", $search);
         $foundItems = 0;
+        $dSet = array();
 
         //Get all the search key items
         foreach ($searchKeys as $i => $value):
-            
-            $dSet[$i] = $this->searchmodel->getKeySearch($value);
-            $foundItems += sizeof($dSet[$i]);
+            //When people do a search for nothing in the bar, or some bot hits we dont want to return the entire db
+            if($value == '0' || $value == NULL || strlen($value) == 0 || $value == ' '):
+
+            else:
+                $dSet[$i] = $this->searchmodel->getKeySearch($value);
+                $foundItems += sizeof($dSet[$i]);
+            endif;
         endforeach;
 
         //Log this and how many results it found to see what people are searching for.

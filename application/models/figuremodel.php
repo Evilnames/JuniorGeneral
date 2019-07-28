@@ -181,6 +181,13 @@ class figuremodel extends CI_Model {
         return $query->result_array();
     }
 
+    public function log_figure_change($userName, $pre, $post){
+        $SQL = "insert into log_figure_changes(user_name, pre_change_json, post_change_json) select ?, ?, ?";
+        $query = $this->db->query($SQL, array($userName, $pre, $post));
+
+        return 1;
+    }
+
 }
 
 ?>
