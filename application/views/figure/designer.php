@@ -13,7 +13,7 @@
                 <th>Amount</th>
             </tr>
             <tr>
-                <td>Number of Figures Contributed</td>
+                <td><a href = "/index.php/sitestats/topDesigners/">Number of Figures Contributed</a></td>
                 <td><?php echo number_format($totalFigures, 0);?></td>
             </tr>
         </table>
