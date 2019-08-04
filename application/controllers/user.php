@@ -430,7 +430,7 @@ class user extends CI_Controller {
     //Password Changing
     public function changepassword() {
         //MUST BE LOGGED IN
-        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        if (!defined('JGLOGGEDIN')) : $this->fileuploaderror(array());
         endif;
 
 
@@ -443,7 +443,7 @@ class user extends CI_Controller {
     //Saves a password
     public function savepassword() {
         //MUST BE LOGGED IN
-        if (!defined('ADMIN')) : $this->fileuploaderror(array());
+        if (!defined('JGLOGGEDIN')) : $this->fileuploaderror(array());
         endif;
 
         $this->load->model('usermodel');
