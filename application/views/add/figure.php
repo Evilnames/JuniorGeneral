@@ -7,12 +7,12 @@
 
         <div class="span8">
 
-            <form method="post" action="<?php echo base_url(); ?>index.php/user/savefile" enctype="multipart/form-data">
+            <form method="post" action="/index.php/user/savefile/" enctype="multipart/form-data">
                 <label>Page Title</label>
                 <input class="span5"  type="text" id="pTitle" name="pTitle" <?php
-if ($edit): echo 'value="' . $figure[0]['Title'] . '"';
-endif;
-?>>
+                        if ($edit): echo 'value="' . $figure[0]['Title'] . '"';
+                        endif;
+                        ?>>
 
                 <label>URL</label>
                 <?php

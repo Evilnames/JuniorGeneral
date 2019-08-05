@@ -162,18 +162,20 @@ class user extends CI_Controller {
 
     //Upload a file
     public function savefile() {
-        $this->load->helper('form');
+        //MUST BE LOGGED IN
+        if (!defined('JGLOGGEDIN')) : $this->fileuploaderror(array());
+        endif;
 
         //Get the username of the user
         $username = $this->session->userdata('Username');
-
+      
         $edit = $this->input->post('edit');
-        $filenamelookup = $this->input->post('userfile');
-
+        //See if the name is not empty
+        $filenamelookup = $_FILES['userfile']['name'];
 
         if (!$edit || ($edit && $filenamelookup)):
             //Build the directory structure
-            $filename = 'uploaded/  ' . date('mdy') . '/';
+            $filename = 'uploaded/' . date('mdy') . '/';
 
             //If there is no directory make it.
             if (!is_dir($filename)):
@@ -240,13 +242,13 @@ class user extends CI_Controller {
         else:
             //Mutates the date added because we want updated figures to show up on the home page.
             $data['FileLocation'] = $filename;
-            $data['DateUploaded'] = new Date('Y-m-d h:i:sa');
+            $data['DateUploaded'] = date('Y-m-d h:i:sa');
         endif;
-
+     
         //Auto approve if this is a super user
         if ($userPermission == 3):
             $data['approved'] = 1;
-            $data['approver'] = $userName;
+            $data['approver'] = $username;
         endif;
 
         //Add to the system
@@ -257,7 +259,6 @@ class user extends CI_Controller {
             //Log this change to the DB
             $this->figuremodel->log_figure_change($username, NULL, json_encode($data));
         else:
-            
             //Log this change
             $edit_json = json_encode($data);
             
@@ -269,7 +270,6 @@ class user extends CI_Controller {
 
             //Log this change to the DB
             $this->figuremodel->log_figure_change($username, $current_figure, $edit_json);
-
         endif;
 
         //Send an email to Alex and Matt that there is a new file to approve
