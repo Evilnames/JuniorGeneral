@@ -173,6 +173,8 @@ class user extends CI_Controller {
         //See if the name is not empty
         $filenamelookup = $_FILES['userfile']['name'];
 
+
+
         if (!$edit || ($edit && $filenamelookup)):
             //Build the directory structure
             $filename = 'uploaded/' . date('mdy') . '/';
@@ -255,7 +257,6 @@ class user extends CI_Controller {
         if (!$edit):
             //Add It
             $this->figuremodel->addFigure($data);
-
             //Log this change to the DB
             $this->figuremodel->log_figure_change($username, NULL, json_encode($data));
         else:
