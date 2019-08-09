@@ -1,8 +1,18 @@
 <!DOCTYPE HTML lang="en">
 <head>
-    <title>Junior General Home Page</title>
     <meta name="description" content="Promoting the use of historical simulations as a tool for teaching history.  Free resources anyone can use.">
-    <title>Junior General</title>
+    <title>
+        <?php 
+            if(isset($Title)){
+                echo $Title . ' | Paper Miniature';
+            } else {
+        ?>
+            Junior General | Educational resources for teaching history
+        <?php
+            }
+        ?>
+
+    </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

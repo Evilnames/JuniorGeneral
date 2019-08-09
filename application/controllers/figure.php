@@ -18,9 +18,10 @@ class figure extends CI_Controller {
         //Lookup 
         $set = $this->figuremodel->getFigure($URL);
         $data['iFig'] = $set[0];
+        $header['Title'] = $data['iFig']['Title'];
 
         //Load the view
-        $this->load->view('header/head');
+        $this->load->view('header/head', $header);
         $this->load->view('figure/view', $data);
         $this->load->view('header/foot');
     }
