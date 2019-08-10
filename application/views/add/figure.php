@@ -9,7 +9,7 @@
 
             <form method="post" action="/index.php/user/savefile/" enctype="multipart/form-data">
                 <label>Page Title</label>
-                <input class="span5"  type="text" id="pTitle" name="pTitle" <?php
+                <input required class="span5"  type="text" id="pTitle" name="pTitle" <?php
                         if ($edit): echo 'value="' . $figure[0]['Title'] . '"';
                         endif;
                         ?>>
@@ -22,7 +22,7 @@
                     echo '<input type="hidden" name="edit" id="edit" value="' . $figure[0]['url'] . '">';
                 else:
                     ?>
-                    <input class="span5" type="text" id="url" name="url">
+                    <input required class="span5" type="text" id="url" name="url">
                     <span id="urlgood"></span>
                     <span class="help-block">Can contain no spaces, or special characters.  Must be unique, and once put in the system it should not be changed (For SEO Purposes)</span>      
                 <?php
@@ -30,7 +30,7 @@
                 ?>
 
                 <label>Designer</label>
-                <input class="span5" type="text" id="pDesigner" name="pDesigner"  <?php
+                <input required class="span5" type="text" id="pDesigner" name="pDesigner"  <?php
                 if ($edit): echo 'value="' . $figure[0]['Designer'] . '"';
                 endif;
                 ?>>
@@ -78,19 +78,41 @@
 
 <script type="text/javascript">
 
+    function testURL(value){
+        $.ajax({
+            type:"post",
+            data:{'url':value},
+            url:"urlcheck",
+            success : function(data){
+                testResult(data.result);
+            }
+        });
+    }
+
     $(document).ready(function(){
-        $("#url").change(function(){
+        $("#url").blur(function(){
             var value = $(this).val();
-            $.ajax({
-                type:"post",
-                data:{'url':value},
-                url:"urlcheck",
-                success : function(data){
-                    testResult(data.result);
-                }
-            });
-                
+            testURL(value);
         }); 
+
+        //Why?  The URL stuff is more of an internal function, 
+        //but the user can change it if they want something different
+        $("#pTitle").blur(function(){
+            //Check to see if this is in an edit or add state
+            if(!$("#edit").length){
+                var title = $(this).val();
+                //Strip out any bad characters/spaces from the title
+                title = title.replace(/[^a-z0-9]/gi, '');
+
+                //Replace any missing items here
+                if($("#url").val().length == 0){
+                    $("#url").val(title);
+                    testURL(title);
+                }
+            }
+        });
+
+
         $("#url").keydown(function(event){
             var ew = event.which;
 
@@ -113,11 +135,11 @@
             //Item exists
             //Item Doesn't Exists
             $("#save").attr("disabled", "disabled");
-            $("#urlgood").html('<Font color=red>Error!</font>');
+            $("#urlgood").html('<Font color=red>Error!  This URL has been used already</font>');
         } else {
             //Item Doesn't Exists
             $("#save").removeAttr('disabled');
-            $("#urlgood").html('Good!');
+            $("#urlgood").html('Good! This url has not been used before');
         }
     };
 

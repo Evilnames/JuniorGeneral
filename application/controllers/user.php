@@ -116,7 +116,6 @@ class user extends CI_Controller {
             $data['result'] = 1;
         endif;
 
-        header('Content-Type: application/json');
         echo json_encode($data);
     }
 
