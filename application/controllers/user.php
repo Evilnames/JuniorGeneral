@@ -98,12 +98,6 @@ class user extends CI_Controller {
         if (!defined('JGLOGGEDIN')) : $this->fileuploaderror(array());
         endif;
 
-        //No lower than 3
-        $userPermission = $this->session->userdata('UserLevel');
-        if ($userPermission <= 2):
-            //Unallowed to access this.
-            $this->fileuploaderror(array());
-        endif;
 
         $urlToCheck = $this->input->post('url');
         $this->load->model('figuremodel');

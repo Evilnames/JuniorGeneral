@@ -18,6 +18,13 @@ class nations extends CI_Controller{
         $this->load->view('header/foot');
         
     }
+
+    //Show a list of all universes
+    public function universe(){
+        
+    }
+
+
     
 }
 
